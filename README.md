@@ -4,28 +4,32 @@
 
 [![test](https://github.com/Kaede287/robosys2023/actions/workflows/test.yml/badge.svg)](https://github.com/Kaede287/robosys2023/actions/workflows/test.yml)
 
-このpythonスクリプトは, 入力された年齢に基づき, 成人か未成年かを判断します.
+* このpythonスクリプトは, 入力された年齢に基づき, 成人か未成年かを判断します.
 
 ## インストール方法
 * Githubやpythonが導入された環境で, 下記のコマンドを入力してください.
 ```
 $ git clone  https://github.com/Kaede287/command.git
 ```
+## 実行方法
 
 * commandディレクトリを開く.
 ```
 $ cd command
 ```
+* age.pyコマンドを実行する.
+```
+$ ./age.py
+```
+
+* 以下のように, 自分の年齢を入力し, Enterキーを押して実行してください.
+```
+年齢を入力してください: 20
+```
 
 * 実行権限が付与されていない場合は, 下記コマンドを入力してください.
 ```
 $ chmod +x plus
-```
-
-## 使い方
-* 以下のように, 自分の年齢を入力し, Enterキーを押して実行してください.
-```
-年齢を入力してください: 20
 ```
 
 ##　実行結果
