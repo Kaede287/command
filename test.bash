@@ -10,24 +10,34 @@ ng () {
 res=0
 
 ### 成人か判定 ###
-out=$(echo 18| ./age.py)
-expected=": 成人です"
-[ "${out}" = "${expected}" ] || ng ${LINENO}
+out=$(年齢を入力してください: 20 | ./age.py)
+[ "${out}" = "成人です" ] || ng ${LINENO}
+
+out=$(年齢を入力してください: 18 | ./age.py)
+[ "${out}" = "成人です" ] || ng ${LINENO}
 
 ### 未成年か判定 ###
-out=$(echo 17| ./age.py )
-expected=": 未成年です"
-[ "${out}" = "${expected}" ] || ng ${LINENO}
+out=$(年齢を入力してください: 17 | ./age.py)
+[ "${out}" = "未成年です" ] || ng ${LINENO}
+
+out=$(年齢を入力してください: 10 | ./age.py)
+[ "${out}" = "未成年です" ] || ng ${LINENO}
 
 ### 文字を含むとき ###
-out=$(echo あ| ./age.py)
-[ "$?" = 1 ] || ng ${LINENO}
-[ "${out}" = "" ] || ng ${LINENO}
+out=$(年齢を入力してください: あ | ./age.py)
+[ "$?" = 0 ] || ng ${LINENO}
+
+### 文字と数字を含む ###
+out=$(年齢を入力してください: 18a | ./age.py)
+[ "$?" = 0 ] || ng ${LINENO}
+
+### 記号を含む ###
+out=$(年齢を入力してください: , | ./age.py)
+[ "$?" = 0 ] || ng ${LINENO}
 
 ### 空文字　###
-out=$(echo  | ./age.py)
-[ "$?" = 1 ] || ng ${LINENO}
-[ "${out}" = "" ] || ng ${LINENO}
+out=$(年齢を入力してください:   | ./age.py)
+[ "$?" = 0 ] || ng ${LINENO}
 
 [ "$res" = 0 ] && echo OK
 
