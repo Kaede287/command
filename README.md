@@ -1,13 +1,14 @@
 # command 
 
-# ageコマンド
+# dateコマンド
 
 [![test](https://github.com/Kaede287/robosys2023/actions/workflows/test.yml/badge.svg)](https://github.com/Kaede287/robosys2023/actions/workflows/test.yml)
 
-* このpythonスクリプトは, 入力された年齢に基づき, 成人か未成年かを判断します.
+* このPythonスクリプトは, コマンドラインに"date"コマンドを入力することにより, 現在の日付や時刻を標準入力, 標準出力します.
 
 ## インストール方法
 * pythonが導入された環境で, 下記のコマンドを入力してください.
+
 ```
 $ git clone  https://github.com/Kaede287/command.git
 ```
@@ -19,31 +20,32 @@ $ cd command
 ```
 * 下記のコマンドを入力し, ファイルがあることを確認してください.
 
-* age.pyコマンドを実行する.
+* 入力のリダイレクト
 ```
-$ ./age.py
+$ ./date.py < nums
 ```
 
-* 以下のように, 自分の年齢を入力し, Enterキーを押して実行してください.
+* 出力のリダイレクト
 ```
-年齢を入力してください: 20
+$ date > ans
 ```
 
 * 実行権限が付与されていない場合は, 下記コマンドを入力してください.
 ```
-$ chmod +x age.py
+$ chmod +x date.py
 ```
 
 ## 実行結果
 
+入力のリダイレクト
 ```
-年齢を入力してください: 20
-成人です
+現在の日付は 2023-12-29 です
 ```
 
+出力のリダイレクト
 ```
-年齢を入力してください: a
-入力が正しくありません.数値を入力してください
+$ cat ans
+2023年 12月 29日 金曜日 15:15:48 JST
 ```
 
 ## テスト環境
